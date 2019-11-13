@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+
 import { Button } from '@storybook/angular/demo';
 
 export default {
@@ -21,7 +22,7 @@ export const emoji = () => ({
 });
 
 emoji.story = {
-  parameters: { notes: 'My notes on a button with emojis,hey' },
+  parameters: { notes: 'My notes on a button with emojis' },
 };
 
 export const withSomeEmojiAndAction = () => ({

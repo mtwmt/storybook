@@ -1,4 +1,5 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
+import { addons } from '@storybook/addons';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { BarChartComponent } from 'src/app/bar-chart/bar-chart.component';
 
@@ -31,23 +32,28 @@ const note = `
 `
 
 storiesOf('BarChart', module)
-  .addDecorator(
-    moduleMetadata({
-      declarations: [BarChartComponent],
-    })
-  )
+  // .addDecorator(
+  //   moduleMetadata({
+  //     declarations: [BarChartComponent],
+  //   })
+  // )
   .addParameters({
     component: BarChartComponent,
     docs: {
       container: DocsContainer,
       page: DocsPage,
     },
+    notes: { markdown: note }
   })
   .add('default', () => ({
+    moduleMetadata: {
+      declarations: [BarChartComponent],
+    },
+
     template: temp,
     props: {
       data: dataArr
-    }
+    },
+    // notes: { markdown: note }
   }),
-  { notes: {markdown: note} }
-  )
+)
